@@ -1,0 +1,39 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-secondary"> -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container-fluid ">
+    <a class="navbar-brand" href="/home"><img class="logo" src="../../assets/img/logo1.jpg"/></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <a class="navbar-brand" href="#">Petshop</a> -->
+    <div class="flex flex-row-reverse d-inline-flex" >
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav  text-light" >
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/card">Produtos Diversos</a>
+          </li>
+          <li *ngIf="loginTeste()" class="nav-item" >
+            <a class="nav-link" routerLink="/adm-prod">Administração</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contato">Fale Conosco</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav  text-light" >
+            <li *ngIf="!loginTeste()" class="nav-item" >
+              <a class="nav-link" routerLink="/login"><i class="bi bi-box-arrow-in-left"></i> Login</a>
+            </li>
+            <li *ngIf="loginTeste()" class="nav-item" >
+              <a class="nav-link"  routerLink="/login" (click)="fazLogout()"><i class="bi bi-box-arrow-in-right"></i> Logout</a>
+            </li>
+         </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+

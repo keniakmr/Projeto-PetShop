@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100&display=swap%27');
+* {
+  font-family: 'roboto';
+}
+ .card{
+  /* box-shadow: #404040 1px 1px 5px 3px; */
+  background-size: cover;
+   padding:10px 10px;
+  filter: alpha(opacity=30);
+  opacity:0.8;
+
+  }
+ .carrossel{
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 50%;
+    height: 20%;
+    filter: alpha(opacity=20);
+    opacity:0.8;
+  }
+  li {
+    list-style-type: none;
+  }
+  h1{
+    margin: 10px 10px 10px 20px;
+    color:#212529;
+  }
+  h3{
+    align-items: center;
+  }
+  h5{
+    color:#212529;
+  }
+  p{
+    font-size: 18px;
+  }
+  hr {
+    font-size: 3px;
+    color: #212529;
+  }
+  .titulo{
+    background-color: #FF7F50;
+    color: #fff;
+  }
+  .carousel-inner{
+    text-align:center;
+  }
+

@@ -1,0 +1,73 @@
+<div class="card px-3" style="background-color: #fff9d6;">
+	<div class="card-body ">
+
+    <h5>{{tituloForm}}</h5>
+	</div>
+<!--
+o form é do tipo form group e vai receber o form, por isto é criado a importação do redirectformodule -->
+
+<!-- quando estamos no html e precisamos pegar o conteudo de um form pego atraves do get,
+se tiver valido eu atribuo valido ou invalido, no caso de eu estou verificando uma função eu
+coloco o ?(interrogação) seguido de um ponto(.)
+e testo o e(&&) para qdo o campo nunca tiver sido editado chamando a funcão touched
+o campo de interrogação serve apenas para o campo vazio -->
+
+  <form [formGroup] = "form">
+    <div class="input-group mb-2">
+      <input type="text" class="form-control" placeholder="Descrição" formControlName="prodNome"
+      [class.valid]="this.form.get('prodNome')?.valid"
+      [class.invalid]="this.form.get('prodNome')?.invalid && this.form.get('prodNome')?.touched">
+    </div>
+    <div class="input-group mb-2">
+      <input type="number" class="form-control" placeholder="Preço" formControlName="prodValor"
+      [class.valid]="this.form.get('prodValor')?.valid"
+      [class.invalid]="this.form.get('prodValor')?.invalid && this.form.get('prodValor')?.touched">
+    </div>
+    <div class="input-group mb-2">
+      <input type="number" class="form-control" placeholder="Quantidade" formControlName="prodQuant"
+      [class.valid]="this.form.get('prodQuant')?.valid"
+      [class.invalid]="this.form.get('prodQuant')?.invalid && this.form.get('prodQuant')?.touched">
+    </div>
+    <div class="input-group mb-2">
+      <label>Clique e escolha a espécie</label>
+    </div>
+    <div>
+      <select class="form-control mb-2" name="prodEspecie" formControlName="prodEspecie"
+        [class.valid]="this.form.get('prodEspecie')?.valid"
+        [class.invalid]="this.form.get('prodEspecie')?.invalid && this.form.get('prodEspecie')?.touched">
+        <option value="Cão">Cão</option>
+        <option value="Gato">Gato</option>
+      </select>
+    </div>
+    <div class="input-group mb-2">
+      <label>Clique e escolha o gênero</label>
+    </div>
+    <div>
+      <select class="form-control mb-2" name="prodGenero" formControlName="prodGenero"
+        [class.valid]="this.form.get('prodGenero')?.valid"
+        [class.invalid]="this.form.get('prodGenero')?.invalid && this.form.get('prodGenero')?.touched">
+        <option value="Fêmea">Femêa</option>
+        <option value="Macho">Macho</option>
+      </select>
+    </div>
+    <div class="input-group mb-2">
+      <label>Clique e escolha o tamanho</label>
+    </div>
+    <div>
+      <select class="form-control mb-2" name="prodTam" formControlName="prodTam"
+       [class.valid]="this.form.get('prodTam')?.valid"
+       [class.invalid]="this.form.get('prodTam')?.invalid && this.form.get('prodTam')?.touched">
+        <option value="PP">Extra Pequeno</option>
+        <option value="P">Pequeno</option>
+        <option value="M">Médio</option>
+        <option value="G">Grande</option>
+        <option value="GG">Extra Grande</option>
+      </select>
+    </div>
+    <div class="input-group mb-3">
+      <input formControlName="prodFoto" type="file" accept=".png, .jpg, .jpeg"  (change)="carregarImagem($event)"
+      class="form-control"  placeholder="Foto do produto"/>
+    </div>
+    <button [disabled]="form.invalid" class="btn btn-cadastro mb-2" (click)="insereProduto()">Gravar</button>
+  </form>
+</div>

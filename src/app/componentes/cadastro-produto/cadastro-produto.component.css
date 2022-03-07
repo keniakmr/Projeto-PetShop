@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100&display=swap%27');
+* {
+  font-family: 'roboto';
+}
+/* no caso da validação dos campos qdo o campo é valido a borda fica verde */
+.valid{
+  border-color: rgb(59, 146, 1);
+}
+/* no caso da validação dos campos qdo o campo é Invalido a borda fica vermelha */
+.invalid{
+  border-color: red;
+}
+
+.btn{
+  background-color:   #FF7F50 ;
+  color: #FFFFFF;
+}
+

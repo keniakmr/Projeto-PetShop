@@ -1,0 +1,40 @@
+<div class="card" style="background-color: #fff9d6;">
+  <div class="card-body">
+    <h5 class="titulo">Lista de Produto</h5>
+    <section style="overflow: auto; height: 490px; width: 850px;">
+       <table class="table ">
+          <thead>
+            <tr>
+                <th scope="col">Descrição</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Qtde</th>
+                <th scope="col">Tam</th>
+                <th scope="col">Espécie</th>
+                <th scope="col">Gênero</th>
+            </tr>
+          </thead>
+          <tbody>
+             <tr *ngFor="let produto of itens">
+               <td>{{produto.prodNome}}</td>
+               <td>{{produto.prodValor | currency: "BRL"}}</td>
+               <td>{{produto.prodQuant}}</td>
+               <td>{{produto.prodTam}}</td>
+               <td>{{produto.prodEspecie}}</td>
+               <td>{{produto.prodGenero}}</td>
+               <!-- <td>{{produto.prodFoto}}</td> -->
+               <!-- <td><img [src]="produto.prodFoto" style="width: 40px"></td> -->
+
+               <td><i (click)="editar(produto) "class="fas fa-edit" style="color: #FF7F50;" aria-placeholder="Altera"></i>
+                  <i (click)="excluir(produto.id)" class="fas fa-trash-alt text-danger mx-2"></i>
+   <!--
+                  <a (click)="excluir(produto.id)" class="btn btn-danger" >
+                    <i class="fa fa-trash-o fa-lg"></i> Delete</a> -->
+               </td>
+             </tr>
+          </tbody>
+       </table>
+    </section>
+  </div>
+</div>
+
+
